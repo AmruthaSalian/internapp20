@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+ <body>
+ <div class="login">
+
+	<h1 style = "color:white">Interns Salary Analysis</h1>
+    <style>
+
+       body{
+       background-image: url('https://image.freepik.com/free-photo/black-office-desk-table-with-computer-coffe-cup_1357-85.jpg');
+       background-repeat: no-repeat;
+       background-attachment: fixed;  
+       background-size: cover;   
+    }
+</style>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+        <input type="text" name="aggrigate" placeholder="Aggrigate " required="required" />
+		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+		
+      
+		 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <p class="groove">
+  <p style="color:white">Languages</p>
+    
+     
+      <dd style="color: white"> expirienced = 1 </dd>
+      <dd style="color: white"> not expirienced = 0 </dd></p>
+     <label> <input type="text"name="Java" placeholder="Java" required="required" style="color: red"/> 
+      <input type="text" name="Python" placeholder="Python" required="required" style="color: red" /> 
+      <input type="text" name="C" placeholder="C" required="required" style="color: red" /> 
+      <input type="text" name="C++" placeholder="C++" required="required" style="color: red" /></label>      
+	
+  
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <p style="color:white" > {{ prediction_text }} </p>
+
+ </div>
+
+
+</body>
+</html>
